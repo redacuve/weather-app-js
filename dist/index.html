@@ -6,8 +6,39 @@
     <title>Weather App</title>
 </head>
 <body>
-    <input type="search" id="city" class="form-control" placeholder="Search for your city" />
-    <p>Selected: <strong id="city-value">none</strong></p>
+    <div class="container">
+        <div class="city-search">
+            <input type="search" id="city" class="form-control" placeholder="Search for your city" />
+            <p>Selected: <strong id="city-value">none</strong></p>
+        </div>
+
+        <div class="weather-info">
+            <div class="weather-header">
+                <h3 id="city-name">City name</h3>
+                <p id="date">Date</p>
+            </div>
+            <div class="weather-main">
+                <div>
+                    logo
+                    <p>description</p>
+                </div>
+                <div>
+                    <h3 id="temperature">temperature <span class="scale">°C</span></h3>
+                    <p>real feel: <span id="real-feel">temp</span><span class="scale">°C</span></p>
+                </div>
+            </div>
+            <div class="weather-footer">
+                <ul class="weather-info">
+                    <li>Precipitation:<span></span></li>
+                    <li>Wind Speed<span></span></li>
+                    <li>Visibility:<span></span></li>
+                    <li>Weather condition:<span></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
 
 
     
