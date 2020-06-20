@@ -1,7 +1,93 @@
 * {
-    box-sizing: border-box;
-    color: black;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-   }
+  box-sizing: border-box;
+  color: black;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.weather-container {
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+#weather-icon {
+  width: 5rem;
+  height: 5rem;
+}
+
+
+.freezing_rain_heavy{
+  background: url('./weather-icons/freezing_rain_heavy.svg');
+}
+.freezing_rain{
+  background: url('./weather-icons/freezing_rain.svg');
+}
+.freezing_rain_light{
+  background: url('./weather-icons/freezing_rain_light.svg');
+}
+.freezing_drizzle{
+  background: url('./weather-icons/freezing_drizzle.svg');
+}
+.ice_pellets_heavy{
+  background: url('./weather-icons/ice_pellets_heavy.svg');
+}
+.ice_pellets{
+  background: url('./weather-icons/ice_pellets.svg');
+}
+.ice_pellets_light{
+  background: url('./weather-icons/ice_pellets_light.svg');
+}
+.snow_heavy{
+  background: url('./weather-icons/snow_heavy.svg');
+}
+.snow{
+  background: url('./weather-icons/snow.svg');
+}
+.snow_light{
+  background: url('./weather-icons/snow_light.svg');
+}
+.flurries{
+  background: url('./weather-icons/flurries.svg');
+}
+.tstorm{
+  background: url('./weather-icons/tstorm.svg');
+}
+.rain_heavy{
+  background: url('./weather-icons/rain_heavy.svg');
+}
+.rain{
+  background: url('./weather-icons/rain.svg');
+}
+.rain_light{
+  background: url('./weather-icons/rain_light.svg');
+}
+.drizzle{
+  background: url('./weather-icons/drizzle.svg');
+}
+.fog_light{
+  background: url('./weather-icons/fog_light.svg');
+}
+.fog{
+  background: url('./weather-icons/fog.svg');
+}
+.cloudy{
+  background: url('./weather-icons/cloudy.svg');
+}
+.mostly_cloudy{
+  background: url('./weather-icons/mostly_cloudy.svg');
+}
+.partly_cloudy{
+  background: url('./weather-icons/partly_cloudy_day.svg');
+}
+.mostly_clear{
+  background: url('./weather-icons/mostly_clear_day.svg');
+}
+.clear{
+  background: url('./weather-icons/clear_day.svg');
+}

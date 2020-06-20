@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
+      <div class="weather-container">
+        <div class="weather-header">
+            <h1>Wheather App.</h1>
+        </div>
         <div class="city-search">
-            <input type="search" id="city" class="form-control" placeholder="Search for your city" />
-            <p>Selected: <strong id="city-value">none</strong></p>
+          <input
+            type="search"
+            id="city"
+            class="form-control"
+            placeholder="Search for your city"
+          />
         </div>
 
         <div class="weather-info">
-            <div class="weather-header">
-                <h3 id="city-name">City name</h3>
-                <p id="date">Date</p>
+          <div class="weather-header">
+            <h3 id="city-name">City name</h3>
+            <p id="date">Date</p>
+          </div>
+          <div class="weather-main">
+            <div>
+              logo<div class="mostly_clear" id="weather-icon"></div>
+              <p>description</p>
             </div>
-            <div class="weather-main">
-                <div>
-                    logo
-                    <p>description</p>
-                </div>
-                <div>
-                    <h3 id="temperature">temperature <span class="scale">°C</span></h3>
-                    <p>real feel: <span id="real-feel">temp</span><span class="scale">°C</span></p>
-                </div>
+            <div>
+              <h3 id="temperature">
+                temperature <span class="scale">°C</span>
+              </h3>
+              <p>
+                real feel: <span id="real-feel">temp</span
+                ><span class="scale">°C</span>
+              </p>
             </div>
-            <div class="weather-footer">
-                <ul class="weather-info">
-                    <li>Precipitation:<span></span></li>
-                    <li>Wind Speed<span></span></li>
-                    <li>Visibility:<span></span></li>
-                    <li>Weather condition:<span></span></li>
-                </ul>
-            </div>
+          </div>
+          <div class="weather-footer">
+            <ul class="weather-info">
+              <li>Precipitation:<span></span></li>
+              <li>Wind Speed<span></span></li>
+              <li>Visibility:<span></span></li>
+              <li>Weather condition:<span></span></li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
 
-    
-
-
-    
     <script type="text/javascript" src="./main.js"></script>
-</body>
+  </body>
 </html>
