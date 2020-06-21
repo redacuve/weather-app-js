@@ -19,6 +19,7 @@
 #weather-icon {
   width: 5rem;
   height: 5rem;
+  display: inline-block;
 }
 
 

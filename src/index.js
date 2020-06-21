@@ -18,6 +18,7 @@ const query = (lat, lon, apiKey) => {
 };
 
 
+
 (function () {
   const placesAutocomplete = places({
     appId: appID,
@@ -38,12 +39,16 @@ const query = (lat, lon, apiKey) => {
         return response.json();
       })
       .then((response) => {
-      
-        // temp,feels_like,precipitation,wind_speed,visibility,weather_code
-        //response.feels_like.value
-        //response.observation_time.value
-        //response.temp.value
+
+
         document.getElementById('weather-icon').classList = response.weather_code.value;
+        document.getElementById('date').textContent = new Date(response.observation_time.value).toDateString();
+        document.getElementById('weather-code').textContent = response.weather_code.value;
+        document.getElementById('temperature').textContent = response.temp.value;
+        document.getElementById('real-feel').textContent = response.feels_like.value;
+        document.getElementById('precipitation').textContent = response.precipitation.value;
+        document.getElementById('wind-speed').textContent = response.wind_speed.value;
+        document.getElementById('visibility').textContent = response.visibility.value;
 
       });
   });
