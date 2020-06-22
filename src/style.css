@@ -6,14 +6,81 @@
   padding: 0;
 }
 
+.hide {
+  display: none;
+}
+
 .container {
   text-align: center;
+}
+
+.notification {
+  border-radius: 4px;
+  position: relative;
+  padding: 1rem 2.5rem 1rem 1.25rem;
+  border-radius: 5px;
+}
+
+.delete {
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  cursor: pointer;
+  pointer-events: auto;
+  background-color:rgba(10,10,10,.2);
+  border: none;
+  border-radius: 100%;
+  color: white;
+  padding: .5rem;
+  width: 30px;
+  height: 30px;
+}
+
+
+.notification p {
+  color: inherit;
+}
+
+.success {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+.warning {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+
+.error {
+  background-color: red;
+  color: white;
+  font-weight: bold;
 }
 
 .weather-container {
   display: inline-block;
   border: 1px solid gray;
   border-radius: 5px;
+  width: 100%;
+  max-width: 390px;
+}
+
+h1 {
+  padding: 1rem 0;
+}
+
+.weather-info {
+  margin-top: .5rem;
+}
+
+#date {
+  
+}
+
+#city-name {
+  padding: .5rem 0;
 }
 
 #weather-icon {
