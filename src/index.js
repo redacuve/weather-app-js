@@ -1,7 +1,7 @@
 import './style.css';
 import places from 'places.js';
 import changeUnits from './changeUnits';
-import {addDeleteEvent, openNotification} from './notificationHandler';
+import { addDeleteEvent, openNotification } from './notificationHandler';
 
 const wKey = 'UJkWsapTKh6XOfJS2Ru41FaJxw91Rs6Q';
 const appID = 'plJANF80UWQC';
@@ -31,10 +31,10 @@ placesAutocomplete.on('change', (e) => {
 
   fetch(query(lat, long, wKey, units), { mode: 'cors' })
     .then((response) => response.json())
-    .catch(error => openNotification("The server has problems, please try again later", "error"))
+    .catch(error => openNotification(`The server has problems, please try again later ${error.toString()}`, 'error'))
     .then((response) => {
       document.getElementById('weather-icon').classList = response.weather_code.value;
-      document.querySelector('body').classList = response.weather_code.value + "_weather";
+      document.querySelector('body').classList = `${response.weather_code.value}_weather`;
       document.getElementById('date').textContent = new Date(response.observation_time.value).toDateString();
       document.getElementById('weather-code').textContent = response.weather_code.value.replace('_', ' ');
       document.getElementById('temperature').textContent = response.temp.value;
@@ -42,7 +42,8 @@ placesAutocomplete.on('change', (e) => {
       document.getElementById('precipitation').textContent = response.precipitation.value;
       document.getElementById('wind-speed').textContent = response.wind_speed.value;
       document.getElementById('visibility').textContent = response.visibility.value;
-    }).catch(error => openNotification("This is taking time, please try again later", "warning"));
+    })
+    .catch(error => openNotification(`This is taking time, please try again later, error: ${error.toString()}`, 'warning'));
 });
 
 placesAutocomplete.on('clear', () => {
