@@ -12,6 +12,9 @@
 
 .container {
   text-align: center;
+  position: relative;
+  height: 100vh;
+  max-height: fit-content;
 }
 
 .notification {
@@ -64,6 +67,11 @@
   max-width: 390px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  margin-top: 3rem;
+}
+
+.weather-header {
+  background-color: rgba(255, 255, 255, 0.7)
 }
 
 h1 {
@@ -321,3 +329,9 @@ input:checked + .slider:before {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.main_weather {
+  background: url('./weather-photos/main.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+} 
