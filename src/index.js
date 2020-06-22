@@ -33,8 +33,8 @@ placesAutocomplete.on('change', (e) => {
     .then((response) => response.json())
     .catch(error => openNotification("The server has problems, please try again later", "error"))
     .then((response) => {
-      console.log(response)
       document.getElementById('weather-icon').classList = response.weather_code.value;
+      document.querySelector('body').classList = response.weather_code.value + "_weather";
       document.getElementById('date').textContent = new Date(response.observation_time.value).toDateString();
       document.getElementById('weather-code').textContent = response.weather_code.value.replace('_', ' ');
       document.getElementById('temperature').textContent = response.temp.value;
