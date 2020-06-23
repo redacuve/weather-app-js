@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-</head>
-<body>
-    
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+  </head>
+  <body class="main_weather">
+    <div class="container">
+      <div class="notification success hide" id="notification">
+        <button class="delete">X</button>
+        <p><span id="text-notification"></span>This is the text of the notification</p>
+      </div>
+      <div class="weather-container">
+        <div class="weather-header">
+            <h1>Wheather App.</h1>
+        </div>
+        <div class="city-search">
+          <input
+            type="search"
+            id="city"
+            class="form-control"
+            placeholder="Search for your city"
+          />
+        </div>
+
+        <div class="weather-info">
+          <div class="weather-info-header">
+            <h3 id="city-name">City name</h3>
+            <p id="date">Date</p>
+          </div>
+          <div class="weather-main">
+            <div>
+              <div class="clear" id="weather-icon"></div>
+              <p id="weather-code">Weather description</p>
+            </div>
+            <div>
+              <h3>
+                Temperature: <span id="temperature">--.-</span> <span class="t-scale">°C</span>
+              </h3>
+              <p>
+                Real feel: <span id="real-feel">--.-</span> <span class="t-scale">°C</span>
+              </p>
+            </div>
+          </div>
+          <div class="weather-footer">
+            <ul class="weather-info">
+              <li>Precipitation: <span id="precipitation">--.-</span> <span class="p-scale">mm/hr</span></li>
+              <li>Wind Speed <span id="wind-speed">--.--</span> <span class="w-scale">m/s</span></li>
+              <li>Visibility: <span id="visibility">--.-</span> <span class="v-scale">km</span></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+            <p>°F -- °C</p>
+            <label class="switch">
+                <input id="units-toggler" type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript" src="./main.js"></script>
-</body>
+  </body>
 </html>
