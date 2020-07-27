@@ -54,7 +54,7 @@ This app includes beautiful wallpaper images to illustrate the current weather o
 For more details about this project and it's requeriments go to <a href="https://www.theodinproject.com/courses/javascript/lessons/weather-app"> The Odin Project</a>
 
 <p align="center">
-  <img src="weather.gif" width="250">
+  <img src="weather.gif" width="450">
 </p>
 
 
