@@ -98,7 +98,7 @@ h1 {
 }
 
 .city-search {
-  text-align: left;
+  text-align: center;
 }
 
 #city-name {
@@ -153,6 +153,61 @@ input:checked + .slider {
 
 input:checked + .slider::before {
   transform: translateX(26px);
+}
+
+.city-search-wrapper {
+  position: relative;
+}
+
+.city-search-wrapper input {
+  font-size: 1.5rem;
+  padding: 0 15px;
+  width: 100%;
+}
+
+#city-list {
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  z-index: 100;
+}
+
+.city:hover {
+  background-color: gainsboro;
+}
+
+.spinner {
+  width: 100%;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #ccc;
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
 }
 
 .freezing_rain_heavy {

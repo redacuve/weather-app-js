@@ -17,12 +17,21 @@
             <h1>Wheather App.</h1>
         </div>
         <div class="city-search">
-          <input
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+          <div class="city-search-wrapper">
+            <input
             type="search"
             id="city"
-            class="form-control"
+            class="form-control hide"
             placeholder="Search for your city"
-          />
+            autocomplete="off"
+            />
+            <div id="city-list"></div>
+          </div>
         </div>
 
         <div class="weather-info">
