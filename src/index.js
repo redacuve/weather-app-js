@@ -17,50 +17,12 @@ window.onload = async () => {
   citySearch.classList.remove('hide');
 }
 
-
-
 document.getElementById('units-toggler').addEventListener('change', changeUnits);
 addDeleteEvent();
 
-async function searchCity(query) {
+function searchCity(query) {
   console.log(query);
   console.log(cities);
 }
 citySearch.addEventListener('input', () => searchCity(citySearch.value));
 
-
-const placesAutocomplete = places({
-  appId: appID,
-  apiKey: appKey,
-  container: document.querySelector('#city'),
-});
-
-placesAutocomplete.on('change', (e) => {
-  city.textContent = e.suggestion.value;
-  lat = e.suggestion.latlng.lat;
-  long = e.suggestion.latlng.lng;
-  let units = 'si';
-  if (!document.getElementById('units-toggler').checked) {
-    units = 'us';
-  }
-
-  fetch(query(lat, long, wKey, units), { mode: 'cors' })
-    .then((response) => response.json())
-    .catch(error => openNotification(`The server has problems, please try again later ${error.toString()}`, 'error'))
-    .then((response) => {
-      document.getElementById('weather-icon').classList = response.weather_code.value;
-      document.querySelector('body').classList = `${response.weather_code.value}_weather`;
-      document.getElementById('date').textContent = new Date(response.observation_time.value).toDateString();
-      document.getElementById('weather-code').textContent = response.weather_code.value.replace('_', ' ');
-      document.getElementById('temperature').textContent = response.temp.value;
-      document.getElementById('real-feel').textContent = response.feels_like.value;
-      document.getElementById('precipitation').textContent = response.precipitation.value;
-      document.getElementById('wind-speed').textContent = response.wind_speed.value;
-      document.getElementById('visibility').textContent = response.visibility.value;
-    })
-    .catch(error => openNotification(`This is taking time, please try again later, error: ${error.toString()}`, 'warning'));
-});
-
-placesAutocomplete.on('clear', () => {
-  city.textContent = 'none';
-});
