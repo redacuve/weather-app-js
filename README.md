@@ -41,8 +41,6 @@
 
 * [Contact](#contact)
 
-* [Acknowledgements](#acknowledgements)
-
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
@@ -55,15 +53,16 @@ This app includes beautiful wallpaper images to illustrate the current weather o
 
 For more details about this project and it's requeriments go to <a href="https://www.theodinproject.com/courses/javascript/lessons/weather-app"> The Odin Project</a>
 
+<p align="center">
+  <img src="weather.gif" width="250">
+</p>
+
 
 ### Built With
 
 * [HTML5](https://developer.mozilla.org/es/docs/HTML/HTML5)
 
 * [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
-
-* npm Packages used:
-    * [places.js](https://www.npmjs.com/package/places.js/v/1.16.1)
 
 * API's used:
     * [Clima Ceil](https://developer.climacell.co/v3/docs)
