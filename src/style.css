@@ -159,11 +159,21 @@ input:checked + .slider::before {
   position: relative;
 }
 
+.city-search-wrapper input {
+  font-size: 1.5rem;
+  padding: 0 15px;
+  width: 100%;
+}
+
 #city-list {
   width: 100%;
   position: absolute;
   background-color: white;
   z-index: 100;
+}
+
+.city:hover {
+  background-color: gainsboro;
 }
 
 .spinner {
