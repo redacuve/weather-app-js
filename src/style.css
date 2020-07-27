@@ -155,6 +155,17 @@ input:checked + .slider::before {
   transform: translateX(26px);
 }
 
+.city-search-wrapper {
+  position: relative;
+}
+
+#city-list {
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  z-index: 100;
+}
+
 .spinner {
   width: 100%;
   text-align: center;
