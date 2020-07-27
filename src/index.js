@@ -24,6 +24,7 @@ document
   .getElementById('units-toggler')
   .addEventListener('change', changeUnits);
 document.getElementById('city-list').addEventListener('click', (e) => {
+  cityList.innerHTML = '';
   const indx = e.target.closest('div').id.match(/\d+/)[0];
   city.textContent = arr[indx].name;
   lat = arr[indx].coord.lat;
@@ -76,7 +77,7 @@ function domResults(resultAr) {
     (city, index) => `
     <div class="city" id="city-${index}">
       <h4>${city.name}</h4>
-      <small>Lat: ${city.coord.lat} / Lon: ${city.coord.lon}</small>
+      <small>Lat: ${city.coord.lat} / Lon: ${city.coord.lon} / Country: ${city.country}</small>
       <hr>
     </div>
     `,
@@ -91,6 +92,19 @@ function searchCity(query) {
     result = cities.cities.filter((city) => {
       const regex = new RegExp(`^${query}`, 'gi');
       return city.name.match(regex);
+    });
+  }
+  if (query.length > 2){
+    result.sort((a,b) => {
+      let nameA = a.name.toUpperCase();
+      let nameB = b.name.toUpperCase();
+      if (nameA < nameB){
+        return -1;
+      }
+      if (nameA > nameB){
+        return 1;
+      }
+      return 0;
     });
   }
   domResults(result);
