@@ -1,6 +1,9 @@
 import './style.css';
 import changeUnits from './changeUnits';
 import { addDeleteEvent, openNotification } from './notificationHandler';
+import {
+  arr, loadCities, searchCity, cityList, citySearch,
+} from './searchBar';
 
 const wKey = 'UJkWsapTKh6XOfJS2Ru41FaJxw91Rs6Q';
 const query = (lat, lon, apiKey, unit) => `https://api.climacell.co/v3/weather/realtime?apikey=${apiKey}&lat=${lat}&lon=${lon}&unit_system=${unit}&fields=temp,feels_like,precipitation,wind_speed,visibility,weather_code`;
@@ -8,21 +11,12 @@ const city = document.querySelector('#city-name');
 let lat;
 let long;
 
-const citySearch = document.getElementById('city');
-const cityList = document.getElementById('city-list');
-let arr = [];
-
-let cities;
-window.onload = async () => {
-  const resp = await fetch('./JSON/city.list.json');
-  cities = await resp.json();
-  document.querySelector('.spinner').classList.add('hide');
-  citySearch.classList.remove('hide');
-};
+window.onload = loadCities;
 
 document
   .getElementById('units-toggler')
   .addEventListener('change', changeUnits);
+
 document.getElementById('city-list').addEventListener('click', (e) => {
   cityList.innerHTML = '';
   const indx = e.target.closest('div').id.match(/\d+/)[0];
@@ -64,50 +58,5 @@ document.getElementById('city-list').addEventListener('click', (e) => {
 });
 
 addDeleteEvent();
-
-function domResults(resultAr) {
-  if (resultAr.length > 0 && resultAr.length > 7) {
-    arr = resultAr.slice(0, 7);
-  } else if (resultAr.length > 0) {
-    arr = [...resultAr];
-  } else {
-    arr = [];
-  }
-  const innerCities = arr.map(
-    (city, index) => `
-    <div class="city" id="city-${index}">
-      <h4>${city.name}</h4>
-      <small>Lat: ${city.coord.lat} / Lon: ${city.coord.lon} / Country: ${city.country}</small>
-      <hr>
-    </div>
-    `,
-  );
-
-  cityList.innerHTML = innerCities.join('');
-}
-
-function searchCity(query) {
-  let result = [];
-  if (query.length > 0) {
-    result = cities.cities.filter((city) => {
-      const regex = new RegExp(`^${query}`, 'gi');
-      return city.name.match(regex);
-    });
-  }
-  if (query.length > 2) {
-    result.sort((a, b) => {
-      const nameA = a.name.toUpperCase();
-      const nameB = b.name.toUpperCase();
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-      return 0;
-    });
-  }
-  domResults(result);
-}
 
 citySearch.addEventListener('input', () => searchCity(citySearch.value));
