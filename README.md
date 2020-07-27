@@ -1,8 +1,8 @@
 <!-- Badges -->
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.2-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
-    <img alt="License: MIT " src="https://img.shields.io/badge/License-GPL-yellow.svg" />
+    <img alt="License: GPLv3 " src="https://img.shields.io/badge/License-GPL-yellow.svg" />
   </a>
   <a href="https://twitter.com/redacuve" target="_blank">
     <img alt="Twitter: redacuve " src="https://img.shields.io/twitter/follow/redacuve.svg?style=social" />
@@ -67,7 +67,6 @@ For more details about this project and it's requeriments go to <a href="https:/
 
 * API's used:
     * [Clima Ceil](https://developer.climacell.co/v3/docs)
-    * [Algolia Places](https://www.algolia.com/doc/)
 
 <!-- GETTING STARTED -->
 
@@ -85,7 +84,7 @@ Clone or fork the <a href="https://github.com/redacuve/weather-app-js">repo</a> 
 <!-- HOW IT WORKS -->
 ## How it Works
 
-This app is built with vanilla javascript, first, it uses algolia places to obtain the latitude and longitude of the selected city, then it connects to the climaceil API to obtain all of the weather information, it uses the method fetch to obtain a promise and passes it to a JSON format (another promise), then displays the information on the DOM.
+This app is built with vanilla javascript, first, it uses a json to obtain the latitude and longitude of the selected city, then it connects to the climaceil API to obtain all of the weather information, it uses the method fetch to obtain a promise and passes it to a JSON format (another promise), then displays the information on the DOM.
 
 It uses a helper file (convertHelper.js) to convert the values between the US system or the international system.
 
@@ -135,9 +134,3 @@ This project is under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GN
 Rey David Cuevas Vela - [@redacuve](https://twitter.com/redacuve) - [redacuve@gmail.com](mailto:redacuve@gmail.com) -[linkedin.com/in/redacuve/](https://www.linkedin.com/in/redacuve/)
 
 Project Link: [github.com/redacuve/weather-app-js](https://github.com/redacuve/weather-app-js) - Weather App Project.
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-* [Rey David Cuevas Vela](https://github.com/redacuve)
