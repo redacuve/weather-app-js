@@ -21,7 +21,7 @@
   <br>
     <a href="https://github.com/redacuve/weather-app-js/issues">Request Feature</a>
   </p>
-  <h2 align="center"><a href="https://raw.githack.com/redacuve/weather-app-js/app/dist/index.html"><strong>Live Link!</strong></a></h2>
+  <h2 align="center"><a href="https://raw.githack.com/redacuve/weather-app-js/master/dist/index.html"><strong>Live Link!</strong></a></h2>
 
 <!-- TABLE OF CONTENTS -->
 
